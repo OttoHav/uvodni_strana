@@ -9,12 +9,15 @@
 <head>
     <meta charset="utf-8" />
     <title>Wireframe Page</title>
-    <link rel="stylesheet" href="css/page1.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="css/page1.css" />   
 </head>
 <body>
-    <button id="button_continue" class="button-continue" type="submit">Pokračuj</button>
+
     <!-- Obrázek -->
     <div id="obrazek" class="obrazek"></div>
+
 
     <!-- Textové pole -->
     <div class="text-frame">
@@ -24,20 +27,95 @@
     <div class="container">
         <!-- Formulářový rámeček -->
         <div class="form-frame">
+            <!-- ikony pro nápovědu -->
+            <form method="post">
+@*
+                <!-- První vstup -->
+                <div class="form-group">
+                    <div class="input-with-icon">
+                        <input type="text" id="vstup_nazev_hlasovani" name="VstupNazevHlasovani" value="@Model.VstupNazevHlasovani" />
+                        <a href="#" class="help-icon" data-id="1" data-bs-toggle="modal" data-bs-target="#helpModal">
+                            <i class="fa fa-info-circle"></i>
+                        </a>
+                    </div>
+                </div>
 
-                <form method="post">
-                <input type="text" id="vstup_nazev_hlasovani" name="VstupNazevHlasovani" value="@Model.VstupNazevHlasovani" />
-                <input type="text" id="vstup_firma" name="VstupFirma" value="@Model.VstupFirma" />
+                <!-- Druhý vstup -->
+                <div class="input-with-icon">
+                    <div class="input-with-icon">
+                        <input type="text" id="vstup_firma" name="VstupFirma" value="@Model.VstupFirma" />
+                        <a href="#" class="help-icon" data-id="2" data-bs-toggle="modal" data-bs-target="#helpModal" aria-label="Nápověda">
+                            <i class="fa fa-info-circle"></i>
+                        </a>
+                    </div>
+                </div>
+*@
+
+                <!-- První vstup -->
+                <div class="form-group">
+                    <div class="input-with-icon first-input">
+                        <input type="text" id="vstup_nazev_hlasovani" name="VstupNazevHlasovani" value="@Model.VstupNazevHlasovani" />
+                        <a href="#" class="help-icon" data-id="1" data-bs-toggle="modal" data-bs-target="#helpModal">
+                            <i class="fa fa-info-circle"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Druhý vstup -->
+                <div class="form-group">
+                    <div class="input-with-icon second-input">
+                        <input type="text" id="vstup_firma" name="VstupFirma" value="@Model.VstupFirma" />
+                        <a href="#" class="help-icon" data-id="2" data-bs-toggle="modal" data-bs-target="#helpModal" aria-label="Nápověda">
+                            <i class="fa fa-info-circle"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+                @* <input type="text" id="vstup_nazev_hlasovani" name="VstupNazevHlasovani" value="@Model.VstupNazevHlasovani" />
+                <input type="text" id="vstup_firma" name="VstupFirma" value="@Model.VstupFirma" />*@
                 <input type="text" id="vstup_misto" name="VstupMisto" value="@Model.VstupMisto" />
                 <input type="text" id="vstup_vedouci" name="VstupVedouci" value="@Model.VstupVedouci" />
                 <input type="text" id="vstup_email" name="VstupEmail" value="@Model.VstupEmail" />
                 <input type="text" id="vstup_auditor" name="VstupAuditor" value="@Model.VstupAuditor" />
                 <input type="text" id="vstup_email_auditor" name="VstupEmailAuditor" value="@Model.VstupEmailAuditor" />
                 <button id="button_continue" class="button-continue" type="submit">Pokračuj</button>
-                </form>
+            </form>
         </div>
 
     </div>
+
+    <!-- Modální okno nápovědy-->
+    <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="helpModalLabel">Nápověda</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="helpContent">Načítám nápovědu...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Dynamické načítání obsahu modálního okna
+        document.querySelectorAll('.help-icon').forEach(icon => {
+            icon.addEventListener('click', async function (event) {
+                const objectId = this.getAttribute('data-id');
+                const response = await fetch(`/api/helptext/${objectId}`);
+                const data = await response.text();
+                document.getElementById('helpContent').innerText = data;
+            });
+        });
+    </script>
+
 </body>
 </html>
 

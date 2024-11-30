@@ -8,6 +8,7 @@
     align-items: center;
 }
 
+
 .obrazek {
     position: fixed;
     top: 46.5383px;
@@ -61,22 +62,67 @@
     cursor: pointer;
 }
 
-/* Styl pro jednotlivá vstupní pole */
-#vstup_nazev_hlasovani {
-    position: absolute; /* Pozice vůči .form-frame */
-    top: 20px;
-    left: 20px;
-    width: 200px;
-    height: 40px;
-}
 
+}
+/*
     #vstup_firma{
-    position: absolute; /* Pozice vůči .form-frame */
+    position: absolute;   
     top: 80px;
     left: 20px;
     width: 200px;
     height: 40px;
 }
+*/
+
+
+
+/* Styl pro skupinu */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Kontejner pro pole a ikonu */
+.input-with-icon {
+    display: flex;
+    align-items: center; /* Zarovná ikonu na střed */
+    gap: 8px; /* Mezera mezi polem a ikonou */
+    position: absolute; /* Absolutní pozice vzhledem k rodiči */
+}
+
+/* První pole s ikonou */
+.first-input {
+    top: 40px;
+    left: 20px;
+}
+
+/* Druhé pole s ikonou */
+.second-input {
+    top: 90px;
+    left: 20px;
+}
+
+/* Pole */
+.input-with-icon input {
+    width: 200px;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Ikona */
+.input-with-icon .help-icon {
+    font-size: 18px;
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .input-with-icon .help-icon:hover {
+        color: #0056b3;
+    }
+
+
 
 #vstup_misto {
     position: absolute; /* Pozice vůči .form-frame */
