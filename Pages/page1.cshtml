@@ -1,0 +1,44 @@
+﻿@page
+@model uvodni_strana.Pages.page1Model
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Wireframe Page</title>
+    <link rel="stylesheet" href="css/page1.css" />
+</head>
+<body>
+    <button id="button_continue" class="button-continue" type="submit">Pokračuj</button>
+    <!-- Obrázek -->
+    <div id="obrazek" class="obrazek"></div>
+
+    <!-- Textové pole -->
+    <div class="text-frame">
+        <input type="text" id="text_field" class="text-field" />
+    </div>
+
+    <div class="container">
+        <!-- Formulářový rámeček -->
+        <div class="form-frame">
+
+                <form method="post">
+                <input type="text" id="vstup_nazev_hlasovani" name="VstupNazevHlasovani" value="@Model.VstupNazevHlasovani" />
+                <input type="text" id="vstup_firma" name="VstupFirma" value="@Model.VstupFirma" />
+                <input type="text" id="vstup_misto" name="VstupMisto" value="@Model.VstupMisto" />
+                <input type="text" id="vstup_vedouci" name="VstupVedouci" value="@Model.VstupVedouci" />
+                <input type="text" id="vstup_email" name="VstupEmail" value="@Model.VstupEmail" />
+                <input type="text" id="vstup_auditor" name="VstupAuditor" value="@Model.VstupAuditor" />
+                <input type="text" id="vstup_email_auditor" name="VstupEmailAuditor" value="@Model.VstupEmailAuditor" />
+                <button id="button_continue" class="button-continue" type="submit">Pokračuj</button>
+                </form>
+        </div>
+
+    </div>
+</body>
+</html>
+
+

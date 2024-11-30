@@ -1,0 +1,119 @@
+﻿body {
+    margin: 0;
+    width: 1920px;
+    height: 900px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.obrazek {
+    position: fixed;
+    top: 46.5383px;
+    left: 255.63071px;
+    width: 1404.9132px;
+    height: 125.53859px;
+    border: 2px dashed #000;
+}
+
+.text-frame {
+    position: fixed;
+    top: 218.92421px;
+    left: 255.63071px;
+    width: 1404.9132px;
+    height: 175.98825px;
+    border: 2px dashed #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-field {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 1370.549px;
+    height: 146.30402px;
+    border: 1px solid #000;
+}
+
+.form-frame {
+    position: fixed; 
+    top: 450.12088px;
+    left: 277.66495px;
+    width: 709.29883px;
+    height: 450px;
+    border: 2px dashed #000;
+}
+
+.button-continue {
+    position: fixed;
+    bottom: 66.590149px;
+    right: 190.25757px;
+    width: 190.25757px;
+    height: 66.590149px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Styl pro jednotlivá vstupní pole */
+#vstup_nazev_hlasovani {
+    position: absolute; /* Pozice vůči .form-frame */
+    top: 20px;
+    left: 20px;
+    width: 200px;
+    height: 40px;
+}
+
+    #vstup_firma{
+    position: absolute; /* Pozice vůči .form-frame */
+    top: 80px;
+    left: 20px;
+    width: 200px;
+    height: 40px;
+}
+
+#vstup_misto {
+    position: absolute; /* Pozice vůči .form-frame */
+    top: 140px;
+    left: 20px;
+    width: 200px;
+    height: 40px;
+}
+
+#vstup_vedouci {
+    position: absolute; /* Pozice vůči .form-frame */
+    top: 200px;
+    left: 20px;
+    width: 200px;
+    height: 40px;
+}
+
+#vstup_email {
+    position: absolute; /* Pozice vůči .form-frame */
+    top: 260px;
+    left: 20px;
+    width: 200px;
+    height: 40px;
+}
+
+#vstup_auditor {
+    position: absolute; /* Pozice vůči .form-frame */
+    top: 320px;
+    left: 20px;
+    width: 200px;
+    height: 40px;
+}
+
+#vstup_email_auditor {
+    position: absolute; /* Pozice vůči .form-frame */
+    top: 380px;
+    left: 20px;
+    width: 200px;
+    height: 40px;
+}
